@@ -2,27 +2,45 @@ import React from 'react';
 import { StyleSheet } from "react-native";
 import { Colors } from "@/constants/Colors";
 
-const inputFontSize = 20;
 const inputPadding = 10;
 
 export function useTheme() {
     const colors = useColorTheme();
-    const currTheme = React.useMemo(()=>StyleSheet.create({
+    const fonts = useFonts();
+    const styles = React.useMemo(()=>StyleSheet.create({
         input: {
             backgroundColor: colors.inputBackgroundColor,
-            borderBottomColor: colors.primary,
             color: colors.inputTextColor,
-            fontSize: inputFontSize,
+            fontSize: fonts.normal,
             padding: inputPadding,
             borderWidth: 2,
-            borderRadius: 5
+            borderRadius: 10,
+            borderBottomColor: colors.primary,
+            borderTopColor: colors.borderColor,
+            borderRightColor: colors.borderColor,
+            borderLeftColor: colors.borderColor,
         },
         inputFocused: {
-            borderColor: colors.primary
+            borderTopColor: colors.primary,
+            borderRightColor: colors.primary,
+            borderLeftColor: colors.primary,
         }
     }), [colors]);
 
-    return currTheme;
+    return {
+        styles,
+        colors,
+        fonts
+    };
+}
+
+function useFonts() {
+    return {
+        larger: 60,
+        large: 40,
+        normal: 20,
+        small: 10,
+    };
 }
 
 function useColorTheme() {

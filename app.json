@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "react-native-essentials",
-    "slug": "react-native-essentials",
+    "name": "react-native-playtest",
+    "slug": "react-native-playtest",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -35,7 +35,7 @@
     },
     "extra": {
       "eas": {
-        "projectId": "55d010a4-4ce7-4b1b-9153-73a1277285d0"
+        "projectId": "e59b856a-b31d-4bc8-9bdb-80f5732f60c0"
       }
     }
   }
